@@ -1,4 +1,3 @@
-classes
-=======
-
-Pack Classes
+CRUD MYSQLi
+======================
+CRUD to work with MySqli
