@@ -4,16 +4,20 @@ class Model
 {
     protected $db;
     
-    public function __construct() {
+    public function __construct() 
+    {
         $this->db = new mysqli('localhost', 'root', 'php123', 'atemde');
     }
     
     
-    public function insert($tabela, Array $dados) {
-        foreach ($dados as $inds => $vals){
+    public function insert($tabela, Array $dados) 
+    {        
+        foreach ($dados as $inds => $vals)
+        {
             $campos[] = $inds;
             $valores[] = $vals;
         }
+
         $campos = implode(', ', $campos);
         $valores = "'".implode("','", $valores)."'";
         $query = $this->db->prepare("INSERT INTO `{$tabela}` ({$campos}) VALUES ({$valores})");
